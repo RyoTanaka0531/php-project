@@ -15,3 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 // ショップ一覧画面を表示
 Route::get('/', 'ShopController@showList')->name('shops');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
