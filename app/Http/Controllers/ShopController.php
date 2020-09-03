@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Shop;
 
 class ShopController extends Controller
 {
@@ -12,6 +13,17 @@ class ShopController extends Controller
      */
     public function showList()
     {
-        return view('shop.list');
+        $shops = Shop::all();
+        // dd($shops);
+        return view('shop.list', ['shops' => $shops]);
+    }
+
+    /**
+     * ショップ登録画面表示する。
+     * @return view
+     */
+    public function create()
+    {
+        return view('shop.create');
     }
 }
