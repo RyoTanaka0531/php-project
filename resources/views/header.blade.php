@@ -8,6 +8,7 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="#">店舗一覧 <span class="sr-only"></span></a>
                 <a class="nav-item nav-link" href="#">トップ</a>
+                <a class="nav-item nav-link" href="{{ route('shops/create')}}">ショップ登録</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

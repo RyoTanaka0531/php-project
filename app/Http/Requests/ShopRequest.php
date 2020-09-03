@@ -13,7 +13,7 @@ class ShopRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,6 +24,8 @@ class ShopRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required | max:30',
+            'address' => 'required'
             //
         ];
     }
