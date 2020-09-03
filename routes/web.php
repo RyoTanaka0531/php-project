@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,15 +16,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ショップ一覧画面を表示
-Route::get('shops', 'ShopController@showList')->name('shops/index');
+Route::get('shops', 'ShopController@index')->name('shops/index');
 // ショップ登録画面表示
 Route::get('/shops/create', 'ShopController@create')->name('shops/create');
 // ショップ登録
 Route::post('/shops/store', 'ShopController@store')->name('shops/store');
+
+Route::get('/shops/{id}', 'ShopController@show')->name('shops/show');
+
 // ユーザー一覧画面を表示
 Route::get('/', 'UserController@index')->name('users/index');
 // ユーザー詳細画面を表示
-Route::get('/user/{id}', 'UserController@show')->name('users/show');
+Route::get('/users/{id}', 'UserController@show')->name('users/show');
 
 
 

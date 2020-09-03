@@ -12,13 +12,27 @@ class ShopController extends Controller
      * ショップ一覧を表示する。
      * @return view
      */
-    public function showList()
+    public function index()
     {
         $shops = Shop::all();
         // dd($shops);
-        return view('shop.list', ['shops' => $shops]);
+        return view('shop.index', ['shops' => $shops]);
     }
 
+    /**
+     * ショップ詳細を表示
+     * @param int $id
+     * @return view
+     */
+    public function show($id)
+    {
+        $shop = Shop::find($id);
+        if (is_null($shop)){
+            session()-> flash('err_msg', 'データがありません。');
+            return redirect(route('shops/index'));
+        }
+        return view('shop.show', ['shop' => $shop]);
+    }
     /**
      * ショップ登録画面表示する。
      * @return view

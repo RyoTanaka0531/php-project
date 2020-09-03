@@ -28,6 +28,6 @@ class UserController extends Controller
             session() ->flash('err_msg', 'データがありません。');
             return redirect(route('users/index'));
         }
-        return view('user.show', ['user' => $user]);
+        return view('users.show', ['user' => $user]);
     }
 }
