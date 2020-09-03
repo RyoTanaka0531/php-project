@@ -25,7 +25,10 @@ class ShopRequest extends FormRequest
     {
         return [
             'name' => 'required | max:30',
-            'address' => 'required'
+            'address' => 'required',
+            'description' => 'required',
+            'time' => 'required',
+            'tel' => 'required'
             //
         ];
     }

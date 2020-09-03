@@ -32,23 +32,16 @@ class ShopController extends Controller
      * ショップの登録をする。
      * @return view
      */
+    // Request->ShopRequestに変えることによってvalidationを挟む
     public function store(ShopRequest $request)
     {
         // dd($inputs = $request -> all());
         // ショップのデータを受け取る。
         $inputs = $request->all();
-        // DB::beginTransaction();
-        try {
-            // ショップ登録
-            Shop::create($inputs);
-            // DB::commit();
-        } catch(\Throwable $e){
-            // DB::rollback();
-            abort(500);
-        }
+        // ショップを登録
+        Shop::create($inputs);
         // dd($request->all());
         session()-> flash('err_msg', '登録が完了しました。');
-        return redirect(route('shops/imdex'));
+        return redirect(route('shops/index'));
     }
-
 }

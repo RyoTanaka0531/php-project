@@ -10,14 +10,13 @@ class Shop extends Model
     protected $table = 'shops';
 
     // 可変項目
-    protected $fiilable =
+    protected $fillable =
     [
         'name',
         'address',
-        'desctription',
+        'description',
         'time',
-        'tell',
+        'tel',
         'menu'
-    ]
-
+    ];
 }

@@ -7,9 +7,7 @@
         <form method="POST" action="{{ route('shops/store') }}" onSubmit="return checkSubmit()">
         @csrf
             <div class="form-group">
-                <label for="name">
-                    店名
-                </label>
+                <label for="name">店名</label>
                 <input type="text" name='name' id="name" class="form-control">
                     <!-- id="name" -->
                     <!-- name="name" -->
@@ -23,9 +21,7 @@
                 @endif
             </div>
             <div class="form-group">
-                <label for="address">
-                    住所
-                </label>
+                <label for="address">住所</label>
                 <input type="text" name="address" id="address" class="form-control">
                     <!-- id="address" -->
                     <!-- name="address" -->
@@ -36,6 +32,40 @@
                     <div class="text-danger">
                         {{ $errors->first('address') }}
                     </div>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="description">ショップ紹介</label>
+                    <input type="text" name="description" id="description" class="form-control">
+                    @if ($errors ->has('description'))
+                        <div class="text-danger">
+                            {{$errors->first('description')}}
+                        </div>
+                    @endif
+            </div>
+            <div class="form-group">
+                <label for="time">営業時間</label>
+                <input type="text" name="time" id="time" class="form-control">
+                @if ($errors->has('time'))
+                    <div class="text-danger">
+                        {{$errors->first('time')}}
+                    </div>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="time">メニュー</label>
+                <input type="text" name="menu" id="menu" class="form-control">
+                @if ($errors->has('menu'))
+                    <div class="text-danger">
+                        {{$errors->first('menu')}}
+                    </div>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="tel">電話番号</label>
+                <input type="text" name="tel" id="tel">
+                @if ($errors->has('tel'))
+                    {{$errors->first('tel')}}
                 @endif
             </div>
             <div class="mt-5">
