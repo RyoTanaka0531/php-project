@@ -6,7 +6,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="shops/index">店舗一覧 <span class="sr-only"></span></a>
+                <a class="nav-item nav-link active" href="shops">店舗一覧 <span class="sr-only"></span></a>
+                <a class="nav-item nav-link" href="users">ユーザー一覧</a>
                 <a class="nav-item nav-link" href="#">トップ</a>
                 <a class="nav-item nav-link" href="{{ route('shops/create')}}">ショップ登録</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">

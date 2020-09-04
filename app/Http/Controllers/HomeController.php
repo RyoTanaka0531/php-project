@@ -26,6 +26,9 @@ class HomeController extends Controller
         return view('home');
     }
 
+    /**
+     * @return view
+     */
     public function top()
     {
         return view('top');

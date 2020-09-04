@@ -31,11 +31,12 @@ Route::post('/shops/update', 'ShopController@update')->name('shops/update');
 Route::post('/shops/delete/{id}', 'ShopController@delete')->name('shops/delete');
 
 // ユーザー一覧画面を表示
-Route::get('/', 'UserController@index')->name('users/index');
+Route::get('users', 'UserController@index')->name('users/index');
 // ユーザー詳細画面を表示
 Route::get('/users/{id}', 'UserController@show')->name('users/show');
 
 
+Route::get('/', 'HomeController@top')->name('top');
 
 Auth::routes();
 

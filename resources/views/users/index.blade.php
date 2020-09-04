@@ -21,7 +21,7 @@
                 <!-- 配列$usersから取り出した各データ$userに対して、アロー演算子で各プロパティ
                     を取り出している。 -->
                 <td>{{$user -> id}}</td>
-                <td><a href="/user/{{$user -> id}}">{{$user->name}}</a></td>
+                <td><a href="/users/{{$user->id}}">{{$user->name}}</a></td>
                 <td>{{$user -> email}}</td>
                 <td>{{$user -> profile}}</td>
             </tr>
