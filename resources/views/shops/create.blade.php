@@ -8,7 +8,7 @@
         @csrf
             <div class="form-group">
                 <label for="name">店名</label>
-                <input type="text" name='name' id="name" class="form-control">
+                <input type="text" name='name' class="form-control">
                     <!-- id="name" -->
                     <!-- name="name" -->
                     <!-- class="form-control" -->
@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label for="address">住所</label>
-                <input type="text" name="address" id="address" class="form-control">
+                <input type="text" name="address" class="form-control">
                     <!-- id="address" -->
                     <!-- name="address" -->
                     <!-- class="form-control" -->
@@ -36,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label for="description">ショップ紹介</label>
-                    <input type="text" name="description" id="description" class="form-control">
+                    <input type="text" name="description" class="form-control">
                     @if ($errors ->has('description'))
                         <div class="text-danger">
                             {{$errors->first('description')}}
@@ -54,7 +54,7 @@
             </div>
             <div class="form-group">
                 <label for="time">メニュー</label>
-                <input type="text" name="menu" id="menu" class="form-control">
+                <input type="text" name="menu" class="form-control">
                 @if ($errors->has('menu'))
                     <div class="text-danger">
                         {{$errors->first('menu')}}
@@ -63,7 +63,7 @@
             </div>
             <div class="form-group">
                 <label for="tel">電話番号</label>
-                <input type="text" name="tel" id="tel">
+                <input type="text" name="tel" class="form-control">
                 @if ($errors->has('tel'))
                     {{$errors->first('tel')}}
                 @endif

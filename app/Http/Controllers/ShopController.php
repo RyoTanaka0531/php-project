@@ -72,6 +72,30 @@ class ShopController extends Controller
             return redirect(route('shops/index'));
         }
         return view('shops.edit', compact('shop'));
+    }
 
+    /**
+     * ショップの更新をする。
+     * @return view
+     */
+    // Request->ShopRequestに変えることによってvalidationを挟む
+    public function update(ShopRequest $request)
+    {
+        // ショップのデータを受け取る。
+        $inputs = $request->all();
+        dd($inputs);
+        // ショップを登録
+        $shop = Shop::find($inputs['id']);
+        $shop->fill([
+            'name' => $inputs['name'],
+            'address' => $inputs['address'],
+            'description' => $inputs['description'],
+            'time' => $inputs['time'],
+            'tel' => $inputs['tel'],
+            'menu' => $inputs['menu']
+        ]);
+        $shop->save();
+        session()-> flash('err_msg', '更新が完了しました。');
+        return redirect(route('shops/index'));
     }
 }
