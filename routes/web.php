@@ -27,7 +27,8 @@ Route::get('/shops/{id}', 'ShopController@show')->name('shops/show');
 Route::get('/shops/{id}/edit', 'ShopController@edit')->name('shops/edit');
 // ショップの編集を完了
 Route::post('/shops/update', 'ShopController@update')->name('shops/update');
-
+// ショップの削除
+Route::post('/shops/delete/{id}', 'ShopController@delete')->name('shops/delete');
 
 // ユーザー一覧画面を表示
 Route::get('/', 'UserController@index')->name('users/index');

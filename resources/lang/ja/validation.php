@@ -145,6 +145,12 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' =>'名前',
+        'address' => '住所',
+        'description' => 'ショップ紹介',
+        'time'=> '営業時間',
+        'tel' => '電話番号'
+    ],
 
 ];

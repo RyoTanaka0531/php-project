@@ -12,7 +12,7 @@ class UserController extends Controller
         $users = User::all();
         // ddとはLaravelのデバッグメソッド。
         // dd($users);
-        return view('user.index', ['users' => $users]);
+        return view('users.index', ['users' => $users]);
     }
 
     /**

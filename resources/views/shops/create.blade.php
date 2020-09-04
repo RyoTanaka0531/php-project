@@ -10,10 +10,7 @@
                 <label for="name">店名</label>
                 <input type="text" name='name' class="form-control">
                     <!-- id="name" -->
-                    <!-- name="name" -->
-                    <!-- class="form-control" -->
                     <!-- value="{{ old('name') }}" -->
-                    <!-- type="text" -->
                 @if ($errors->has('name'))
                     <div class="text-danger">
                         {{ $errors->first('name') }}
@@ -24,10 +21,7 @@
                 <label for="address">住所</label>
                 <input type="text" name="address" class="form-control">
                     <!-- id="address" -->
-                    <!-- name="address" -->
-                    <!-- class="form-control" -->
                     <!-- value="{{ old('address') }}" -->
-                    <!-- type="text" -->
                 @if ($errors->has('address'))
                     <div class="text-danger">
                         {{ $errors->first('address') }}

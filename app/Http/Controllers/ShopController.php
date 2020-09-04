@@ -83,7 +83,7 @@ class ShopController extends Controller
     {
         // ショップのデータを受け取る。
         $inputs = $request->all();
-        dd($inputs);
+        // dd($inputs);
         // ショップを登録
         $shop = Shop::find($inputs['id']);
         $shop->fill([
@@ -96,6 +96,21 @@ class ShopController extends Controller
         ]);
         $shop->save();
         session()-> flash('err_msg', '更新が完了しました。');
+        return redirect(route('shops/index'));
+    }
+
+    public function delete($id)
+    {
+        if  (empty($id)){
+            session()->flash('err_msg', 'データがありません。');
+            return redirect(route('shops/index'));
+        }
+        try{
+            Shop::destroy($id);
+        } catch(\Throwable $e){
+            abort(500);
+        }
+        session()->flash('err_msg', '削除が完了しました。');
         return redirect(route('shops/index'));
     }
 }
