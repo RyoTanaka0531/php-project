@@ -21,8 +21,13 @@ Route::get('shops', 'ShopController@index')->name('shops/index');
 Route::get('/shops/create', 'ShopController@create')->name('shops/create');
 // ショップ登録
 Route::post('/shops/store', 'ShopController@store')->name('shops/store');
-
+// ショップ詳細
 Route::get('/shops/{id}', 'ShopController@show')->name('shops/show');
+// ショップ編集画面の表示
+Route::get('/shops/{id}/edit', 'ShopController@edit')->name('shops/edit');
+// ショップの編集を完了
+Route::post('/shops/update', 'ShopController@update')->name('shops/update');
+
 
 // ユーザー一覧画面を表示
 Route::get('/', 'UserController@index')->name('users/index');

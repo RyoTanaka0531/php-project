@@ -16,7 +16,7 @@ class ShopController extends Controller
     {
         $shops = Shop::all();
         // dd($shops);
-        return view('shop.index', ['shops' => $shops]);
+        return view('shops.index', ['shops' => $shops]);
     }
 
     /**
@@ -31,7 +31,7 @@ class ShopController extends Controller
             session()-> flash('err_msg', 'データがありません。');
             return redirect(route('shops/index'));
         }
-        return view('shop.show', ['shop' => $shop]);
+        return view('shops.show', ['shop' => $shop]);
     }
     /**
      * ショップ登録画面表示する。
@@ -39,7 +39,7 @@ class ShopController extends Controller
      */
     public function create()
     {
-        return view('shop.create');
+        return view('shops.create');
     }
 
     /**
@@ -57,5 +57,21 @@ class ShopController extends Controller
         // dd($request->all());
         session()-> flash('err_msg', '登録が完了しました。');
         return redirect(route('shops/index'));
+    }
+
+    /**
+     * ショップ編集フォームを表示
+     * @param int $id
+     * @return view
+     */
+    public function edit($id)
+    {
+        $shop = Shop::find($id);
+        if (is_null($shop)){
+            session()-> flash('err_msg', 'データがありません');
+            return redirect(route('shops/index'));
+        }
+        return view('shops.edit', compact('shop'));
+
     }
 }

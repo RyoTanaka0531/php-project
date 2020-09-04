@@ -12,6 +12,7 @@
                 <th>説明</th>
                 <th>メニュー</th>
                 <th>電話番号</th>
+                <th></th>
             </tr>
             @foreach($shops as $shop)
             <tr>
@@ -21,6 +22,7 @@
                 <td>{{$shop->description}}</td>
                 <td>{{$shop->menu}}</td>
                 <td>{{$shop->tel}}</td>
+                <td><button type="button" class="btn btn-primary" onclick="location.href='/shops/{{$shop->id}}/edit'">編集</button></td>
             </tr>
             @endforeach
         </table>
