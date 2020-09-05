@@ -13,7 +13,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // 認証されていなければアクセス出来ない設定
+        // $this->middleware('auth');
     }
 
     /**

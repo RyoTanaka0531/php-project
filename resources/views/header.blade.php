@@ -1,15 +1,15 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">食べナビ</a>
+        <a class="navbar-brand" href="/">食べナビ</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="shops">店舗一覧 <span class="sr-only"></span></a>
-                <a class="nav-item nav-link" href="users">ユーザー一覧</a>
-                <a class="nav-item nav-link" href="#">トップ</a>
-                <a class="nav-item nav-link" href="{{ route('shops/create')}}">ショップ登録</a>
+                <a class="nav-item nav-link active" href="users">ユーザー一覧</a>
+                <a class="nav-item nav-link active" href="/">トップ</a>
+                <a class="nav-item nav-link" href="shops/create">ショップ登録</a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -31,9 +31,9 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                        nclick="event.preventDefault();
+                                        onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('ログアウト') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

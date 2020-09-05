@@ -38,6 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
+        // ログイン前でもアクセス可能
         $this->middleware('guest');
     }
 
@@ -67,7 +68,9 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+            'password' => Hash::make($data['password'])
+            // laravelはデフォでnullは禁止？nullを許容する設定が必要
+            ]);
+            return view('users.index');
     }
 }

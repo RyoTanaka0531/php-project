@@ -39,7 +39,6 @@ Route::get('/users/{id}', 'UserController@show')->name('users/show');
 Route::get('/', 'HomeController@top')->name('top');
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
 // make:authの挙動調べたのち、変更
 // Route::get('/top', 'HomeController@top');
