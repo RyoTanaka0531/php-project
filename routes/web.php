@@ -34,6 +34,10 @@ Route::post('/shops/delete/{id}', 'ShopController@delete')->name('shops/delete')
 Route::get('users', 'UserController@index')->name('users/index');
 // ユーザー詳細画面を表示
 Route::get('/users/{id}', 'UserController@show')->name('users/show');
+// ユーザー編集画面の表示
+Route::get('/users/{id}/edit', 'UserController@edit')->name('users/edit');
+// ユーザーの更新
+Route::post('/users/update', 'UserController@update')->name('users/update');
 
 
 Route::get('/', 'HomeController@top')->name('top');
