@@ -9,6 +9,11 @@ use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['show','index']]);
+    }
+
     public function index()
     {
         $users = User::all();
@@ -36,6 +41,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
+        $this->authrize('update', $user);
         if (is_null($user)){
             session()-> flash('err_msg', 'データがありません。');
             return redirect(route('users/index'));
@@ -47,6 +53,7 @@ class UserController extends Controller
     {
         $inputs = $request->all();
         $user = User::find($inputs['id']);
+        $this->authorize('update', $user);
         $user->fill([
             'name' => $inputs['name'],
             'profile' => $inputs['profile'],
