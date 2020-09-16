@@ -8,6 +8,21 @@
         <p>メールアドレス:{{$user -> email}}</p>
         <p> プロフィール:{{$user -> profile}}</p>
         <p><button type="button" class="btn btn-primary" onclick="location.href='/users/{{$user->id}}/edit'">編集</button></p>
+        <form action="/users/{id}/delete" method="post" onSubmit="return checkSubmit()">
+        @csrf
+            <input type="hidden" name="id" value="{{$user->id}}">
+            <input type="submit" value="退会する">
+        </form>
     </div>
 </div>
 @endsection
+
+<script>
+    function checkSubmit(){
+        if(window.confirm('本当に退会しますか？')){
+            return true;
+        } else{
+            return false;
+        }
+    }
+</script>

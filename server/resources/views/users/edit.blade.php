@@ -2,7 +2,7 @@
 @section('title', '編集')
 @section('content')
 <h2>ユーザー情報編集</h2>
-<form action="/users/update" method="post" >
+<form action="{{ route('users/update') }}" method="post">
 @csrf
 <input type="hidden" name="id" value="{{$user->id}}">
     <div class="form-group">

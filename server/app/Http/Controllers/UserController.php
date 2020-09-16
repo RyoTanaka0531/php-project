@@ -49,11 +49,18 @@ class UserController extends Controller
         $user = User::find($inputs['id']);
         $user->fill([
             'name' => $inputs['name'],
-            'profile' => $inputs['profile']
+            'profile' => $inputs['profile'],
         ]);
         $user->save();
         session()->flash('err_msg', '更新が完了しました。');
         // id指定でのルート設定を調べる
         return redirect(route('users/index'));
+    }
+
+    public function delete(Request $request)
+    {
+        User::find($request->id)->delete();
+        session()->flash('flash_message', '退会手続きが完了しました。ご利用ありがとうございました！');
+        return redirect('/');
     }
 }

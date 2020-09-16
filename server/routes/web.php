@@ -39,6 +39,8 @@ Route::get('/users/{id}/edit', 'UserController@edit')->name('users/edit');
 // ユーザーの更新
 Route::post('/users/update', 'UserController@update')->name('users/update');
 
+Route::post('/users/{id}/delete', 'UserController@delete');
+
 
 Route::get('/', 'HomeController@top')->name('top');
 
