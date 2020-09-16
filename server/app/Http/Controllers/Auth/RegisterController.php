@@ -71,6 +71,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password'])
             // laravelはデフォでnullは禁止？nullを許容する設定が必要
             ]);
-            return view('users.index');
+            return redirect('users.index');
     }
 }

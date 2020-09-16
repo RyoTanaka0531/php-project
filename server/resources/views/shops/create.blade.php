@@ -16,10 +16,17 @@
                 @enderror
             </div>
             <div class="form-group">
+                <label for="postcode">郵便番号</label>
+                <input type="text" name="postcode" value="{{old('postcode')}}" class="form-control">
+                @error('postcode')
+                    <div class="text-danger">
+                        {{$message}}
+                    </div>
+                @enderror
+            </div>
+            <div class="form-group">
                 <label for="address">住所</label>
                 <input type="text" name="address" value="{{old('address')}}" class="form-control">
-                    <!-- id="address" -->
-                    <!-- value="{{ old('address') }}" -->
                 @error('address')
                     <div class="text-danger">
                         {{ $message }}

@@ -6,6 +6,7 @@
 @csrf
 <input type="hidden" name="id" value="{{$user->id}}">
     <div class="form-group">
+        <label for="name">名前</label>
         <input type="text" name="name" value="{{$user->name}}" class="form-control">
         @error('name')
             <div class="text-danger">
@@ -14,7 +15,8 @@
         @enderror
     </div>
     <div class="form-group">
-        <input type="text" name="profile" value="profile" class="form-control">
+        <label for="profile">プロフィール</label>
+        <textarea row="5" cols="6" name="profile" class="form-control">{{$user->profile}}</textarea>
         @error('profile')
             <div class="text-danger">
                 {{$message}}

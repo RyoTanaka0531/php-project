@@ -25,7 +25,8 @@ class ShopRequest extends FormRequest
     {
         return [
             'name' => 'required | max:30',
-            'address' => 'numeric | required',
+            'postcode' => 'required |numeric | digits:7',
+            'address' => 'required',
             'description' => 'required | max:200',
             'time' => ' numeric | required',
             'tel' => 'required | numeric|digits_between:10,11',

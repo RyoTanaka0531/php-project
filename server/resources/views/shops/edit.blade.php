@@ -17,6 +17,15 @@
                 @enderror
             </div>
             <div class="form-group">
+                <label for="postcode">郵便番号</label>
+                <input type="text" name="postcode" value="{{$shop->postcode}}" class="form-control">
+                @error('postcode')
+                    <div class="text-danger">
+                        {{$message}}
+                    </div>
+                @enderror
+            </div>
+            <div class="form-group">
                 <label for="address">住所</label>
                 <input type="text" name="address" value="{{$shop->address}}" class="form-control">
                 @error('address')
@@ -27,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label for="description">ショップ紹介</label>
-                    <input type="text" name="description" value="{{$shop->description}}" class="form-control">
+                    <textarea name="description" class="form-control">{{$shop->description}}</textarea>
                     @error('description')
                         <div class="text-danger">
                             {{$message}}

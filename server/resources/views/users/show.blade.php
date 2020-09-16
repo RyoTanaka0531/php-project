@@ -6,12 +6,12 @@
         <h2>{{$user -> name}}</h2>
         <span>名前:{{$user -> name}}</span>
         <p>メールアドレス:{{$user -> email}}</p>
-        <p> プロフィール:{{$user -> profile}}</p>
-        <p><button type="button" class="btn btn-primary" onclick="location.href='/users/{{$user->id}}/edit'">編集</button></p>
+        <p> プロフィール:{{$user -> profile}}</p><br>
+        <button type="button" class="btn btn-primary" onclick="location.href='/users/{{$user->id}}/edit'">編集</button>
         <form action="/users/{id}/delete" method="post" onSubmit="return checkSubmit()">
         @csrf
             <input type="hidden" name="id" value="{{$user->id}}">
-            <input type="submit" value="退会する">
+            <input type="submit" value="退会する" class="btn btn-danger">
         </form>
     </div>
 </div>

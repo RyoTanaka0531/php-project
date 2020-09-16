@@ -88,6 +88,7 @@ class ShopController extends Controller
         $shop = Shop::find($inputs['id']);
         $shop->fill([
             'name' => $inputs['name'],
+            'postcode' => $inputs['postcode'],
             'address' => $inputs['address'],
             'description' => $inputs['description'],
             'time' => $inputs['time'],
@@ -110,7 +111,7 @@ class ShopController extends Controller
         } catch(\Throwable $e){
             abort(500);
         }
-        session()->flash('err_msg', '削除が完了しました。');
+        session()->flash('flash_message', '削除が完了しました。');
         return redirect(route('shops/index'));
     }
 }

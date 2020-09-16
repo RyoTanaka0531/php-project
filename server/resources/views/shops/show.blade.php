@@ -14,14 +14,26 @@
     </tr>
     <tr>
         <td>{{$shop->name}}</td>
+        <td>{{$shop->postcode}}</td>
         <td>{{$shop->address}}</td>
-        <td></td>
         <td>{{$shop->description}}</td>
         <td>{{$shop->menu}}</td>
         <td>{{$shop->time}}</td>
         <td>{{$shop->tel}}</td>
     </tr>
 </table>
-
-
+<a href="/shops/{{$shop->id}}/edit" class="btn btn-primary">編集</a>
+<form action="/shops/delete/{{$shop->id}}" method="post" onSubmit="return checkDelete()">
+    @csrf
+    <input type="submit" value="削除" class="btn btn-danger">
+</form>
 @endsection
+<script>
+    function checkDelete(){
+        if(window.confirm('削除してもよろしいですか？')){
+            return true;
+        } else{
+            return false;
+        }
+    }
+</script>
