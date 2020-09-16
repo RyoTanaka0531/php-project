@@ -25,11 +25,10 @@ class ShopRequest extends FormRequest
     {
         return [
             'name' => 'required | max:30',
-            'address' => 'required',
-            'description' => 'required',
-            'time' => 'required',
-            'tel' => 'required'
-            //
+            'address' => 'numeric | required',
+            'description' => 'required | max:200',
+            'time' => ' numeric | required',
+            'tel' => 'required | numeric|digits_between:10,11',
         ];
     }
 }

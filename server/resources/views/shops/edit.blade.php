@@ -10,58 +10,56 @@
             <div class="form-group">
                 <label for="name">店名</label>
                 <input type="text" name='name' value="{{$shop->name}}" class="form-control">
-                    <!-- id="name" -->
-                    <!-- class="form-control" -->
-                @if ($errors->has('name'))
+                @error('name')
                     <div class="text-danger">
-                        {{ $errors->first('name') }}
+                        {{ $message }}
                     </div>
-                @endif
+                @enderror
             </div>
             <div class="form-group">
                 <label for="address">住所</label>
                 <input type="text" name="address" value="{{$shop->address}}" class="form-control">
-                    <!-- id="address" -->
-                    <!-- class="form-control" -->
-                @if ($errors->has('address'))
+                @error('address')
                     <div class="text-danger">
-                        {{ $errors->first('address') }}
+                        {{ $message }}
                     </div>
-                @endif
+                @enderror
             </div>
             <div class="form-group">
                 <label for="description">ショップ紹介</label>
                     <input type="text" name="description" value="{{$shop->description}}" class="form-control">
-                    @if ($errors ->has('description'))
+                    @error('description')
                         <div class="text-danger">
-                            {{$errors->first('description')}}
+                            {{$message}}
                         </div>
-                    @endif
+                    @enderror
             </div>
             <div class="form-group">
                 <label for="time">営業時間</label>
                 <input type="text" name="time" id="time" value="{{$shop->time}}" class="form-control">
-                @if ($errors->has('time'))
+                @error('time')
                     <div class="text-danger">
-                        {{$errors->first('time')}}
+                        {{$message}}
                     </div>
-                @endif
+                @enderror
             </div>
             <div class="form-group">
-                <label for="time">メニュー</label>
+                <label for="menu">メニュー</label>
                 <input type="text" name="menu" value="{{$shop->menu}}" class="form-control">
-                @if ($errors->has('menu'))
+                @error('menu')
                     <div class="text-danger">
-                        {{$errors->first('menu')}}
+                        {{$message}}
                     </div>
-                @endif
+                @enderror
             </div>
             <div class="form-group">
                 <label for="tel">電話番号</label>
                 <input type="text" name="tel" value="{{$shop->tel}}" class="form-control">
-                @if ($errors->has('tel'))
-                    {{$errors->first('tel')}}
-                @endif
+                @error('tel')
+                    <div class="text-danger">
+                        {{$message}}
+                    </div>
+                @enderror
             </div>
             <div class="mt-5">
                 <a class="btn btn-secondary" href="{{ route('shops/index') }}">

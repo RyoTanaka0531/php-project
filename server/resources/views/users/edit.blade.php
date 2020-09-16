@@ -7,19 +7,19 @@
 <input type="hidden" name="id" value="{{$user->id}}">
     <div class="form-group">
         <input type="text" name="name" value="{{$user->name}}" class="form-control">
-        @if ($errors->has('name'))
+        @error('name')
             <div class="text-danger">
-                {{$errors->first('name')}}
+                {{$message}}
             </div>
-        @endif
+        @enderror
     </div>
     <div class="form-group">
         <input type="text" name="profile" value="profile" class="form-control">
-        @if ($errors->has('profile'))
+        @error('profile')
             <div class="text-danger">
-                {{$errors->first('profile')}}
+                {{$message}}
             </div>
-        @endif
+        @enderror
     </div>
     <p><input type="submit" value="更新する" class="btn btn-primary"></p>
 </form>

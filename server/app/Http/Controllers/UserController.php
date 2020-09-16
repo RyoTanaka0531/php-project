@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Auth\Middleware\RequirePassword;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -42,7 +43,7 @@ class UserController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    public function update(Request $request)
+    public function update(UserRequest $request)
     {
         $inputs = $request->all();
         $user = User::find($inputs['id']);
@@ -53,6 +54,6 @@ class UserController extends Controller
         $user->save();
         session()->flash('err_msg', '更新が完了しました。');
         // id指定でのルート設定を調べる
-        return redirect(route('users/show', [$user]));
+        return redirect(route('users/index'));
     }
 }
