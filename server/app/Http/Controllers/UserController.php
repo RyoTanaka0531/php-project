@@ -41,7 +41,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
-        $this->authrize('update', $user);
+        $this->authorize('update', $user);
         if (is_null($user)){
             session()-> flash('err_msg', 'データがありません。');
             return redirect(route('users/index'));

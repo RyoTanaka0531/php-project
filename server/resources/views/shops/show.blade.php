@@ -22,9 +22,7 @@
         <td>{{$shop->tel}}</td>
     </tr>
 </table>
-@can('update' $user)
 <a href="/shops/{{$shop->id}}/edit" class="btn btn-primary">編集</a>
-@endcan
 <form action="/shops/delete/{{$shop->id}}" method="post" onSubmit="return checkDelete()">
     @csrf
     <input type="submit" value="削除" class="btn btn-danger">
