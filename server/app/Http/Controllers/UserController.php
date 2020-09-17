@@ -54,19 +54,16 @@ class UserController extends Controller
     {
         return view('users.edit', ['user' => Auth::user()]);
     }
+
     public function update(UserRequest $request)
     {
         $inputs = $request->all();
-        $user = User::find($inputs['id']);
-        // $user->fill([
-        //     'name' => $inputs['name'],
-        //     'profile' => $inputs['profile'],
-        // ]);
+        $user = Auth::user();
         unset($inputs['_token']);
         $user->fill([
             'name' => $inputs['name'],
             'profile' => $inputs['profile'],
-        ])
+        ]);
         $user->save();
         session()->flash('err_msg', '更新が完了しました。');
         // id指定でのルート設定を調べる
