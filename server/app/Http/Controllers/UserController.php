@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Auth\Middleware\RequirePassword;
 use App\Http\Requests\UserRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -38,26 +39,34 @@ class UserController extends Controller
         return view('users.show', ['user' => $user]);
     }
 
-    public function edit($id)
-    {
-        $user = User::find($id);
-        $this->authorize('update', $user);
-        if (is_null($user)){
-            session()-> flash('err_msg', 'データがありません。');
-            return redirect(route('users/index'));
-        }
-        return view('users.edit', compact('user'));
-    }
+    // public function edit($id)
+    // {
+    //     $user = User::find($id);
+    //     $this->authorize('update', $user);
+    //     if (is_null($user)){
+    //         session()-> flash('err_msg', 'データがありません。');
+    //         return redirect(route('users/index'));
+    //     }
+    //     return view('users.edit', compact('user'));
+    // }
 
+    public function edit()
+    {
+        return view('users.edit', ['user' => Auth::user()]);
+    }
     public function update(UserRequest $request)
     {
         $inputs = $request->all();
         $user = User::find($inputs['id']);
-        $this->authorize('update', $user);
+        // $user->fill([
+        //     'name' => $inputs['name'],
+        //     'profile' => $inputs['profile'],
+        // ]);
+        unset($inputs['_token']);
         $user->fill([
             'name' => $inputs['name'],
             'profile' => $inputs['profile'],
-        ]);
+        ])
         $user->save();
         session()->flash('err_msg', '更新が完了しました。');
         // id指定でのルート設定を調べる
@@ -69,5 +78,10 @@ class UserController extends Controller
         User::find($request->id)->delete();
         session()->flash('flash_message', '退会手続きが完了しました。ご利用ありがとうございました！');
         return redirect('/');
+    }
+
+    public function mypage(Request $request)
+    {
+        return view('users.mypage', ['user' => Auth::user()]);
     }
 }

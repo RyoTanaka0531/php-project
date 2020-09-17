@@ -41,6 +41,7 @@ Route::post('/users/update', 'UserController@update')->name('users/update');
 
 Route::post('/users/{id}/delete', 'UserController@delete');
 
+Route::get('/users/mypage/{id}', 'UserController@mypage');
 
 Route::get('/', 'HomeController@top')->name('top');
 
