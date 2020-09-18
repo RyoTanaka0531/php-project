@@ -115,9 +115,4 @@ class ShopController extends Controller
         session()->flash('flash_message', '削除が完了しました。');
         return redirect(route('shops/index'));
     }
-
-    public function list()
-    {
-        return view('shops.list');
-    }
 }

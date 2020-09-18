@@ -30,6 +30,8 @@ Route::post('/shops/update', 'ShopController@update')->name('shops/update');
 // ショップの削除
 Route::post('/shops/delete/{id}', 'ShopController@delete')->name('shops/delete');
 
+
+Route::get('shops/list');
 // ユーザー一覧画面を表示
 Route::get('users', 'UserController@index')->name('users/index');
 // ユーザー詳細画面を表示
