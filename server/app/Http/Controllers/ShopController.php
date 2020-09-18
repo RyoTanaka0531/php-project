@@ -20,6 +20,11 @@ class ShopController extends Controller
         return view('shops.index', ['shops' => $shops]);
     }
 
+    public function list()
+    {
+        return view('shops.list');
+    }
+
     /**
      * ショップ詳細を表示
      * @param int $id

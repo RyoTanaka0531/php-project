@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 // ショップ一覧画面を表示
 Route::get('shops', 'ShopController@index')->name('shops/index');
+Route::get('shops/list', 'ShopController@list');
 // ショップ登録画面表示
 Route::get('/shops/create', 'ShopController@create')->name('shops/create');
 // ショップ登録
@@ -30,8 +31,6 @@ Route::post('/shops/update', 'ShopController@update')->name('shops/update');
 // ショップの削除
 Route::post('/shops/delete/{id}', 'ShopController@delete')->name('shops/delete');
 
-
-Route::get('shops/list');
 // ユーザー一覧画面を表示
 Route::get('users', 'UserController@index')->name('users/index');
 // ユーザー詳細画面を表示
