@@ -52,13 +52,17 @@ class UserController extends Controller
 
     public function edit()
     {
-        return view('users.edit', ['user' => Auth::user()]);
+        if ($user = Auth::user()){
+            return view('users.edit', ['user' => Auth::user()]);
+        } else{
+            return redirect('user.index');
+        }
     }
 
     public function update(UserRequest $request)
     {
         $inputs = $request->all();
-        $user = Auth::user();
+        $user = User::find($inputs['id']);
         unset($inputs['_token']);
         $user->fill([
             'name' => $inputs['name'],

@@ -20,6 +20,7 @@ class RouteServiceProvider extends ServiceProvider
      * The path to the "home" route for your application.
      *
      * @var string
+     * HOME定数を定義して、認証後のリダイレクト先を変更する。
      */
     public const HOME = '/';
 

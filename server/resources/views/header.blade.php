@@ -8,9 +8,10 @@
             <div class="navbar-nav">
                 <a class="nav-item nav-link active" href="/shops">店舗一覧</a>
                 <a class="nav-item nav-link active" href="/users">ユーザー一覧</a>
-                <a class="nav-item nav-link active" href="/users/mypage/{id}">マイページ</a>
-                <a class="nav-item nav-link active" href="/">トップ</a>
-                <a class="nav-item nav-link" href="/shops/create">ショップ登録</a>
+                @auth
+                    <a class="nav-item nav-link active" href="/users/mypage/{id}">マイページ</a>
+                    <a class="nav-item nav-link" href="/shops/create">ショップ登録</a>
+                @endauth
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

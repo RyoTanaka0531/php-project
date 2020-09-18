@@ -43,6 +43,7 @@ Route::post('/users/{id}/delete', 'UserController@delete');
 
 Route::get('/users/mypage/{id}', 'UserController@mypage');
 
+
 Route::get('/', 'HomeController@top')->name('top');
 
 Auth::routes();
