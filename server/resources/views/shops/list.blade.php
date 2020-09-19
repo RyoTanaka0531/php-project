@@ -3,10 +3,13 @@
 @section('content')
     <div id="content">
         <h1>カフェ</h1>
-        <div id="map" class="map">
-            <ul>
-                <li>{"name"}</li>
-            </ul>
+        <div class="row">
+            <div class="col-md-6">
+                <ul id="shop-list"></ul>
+            </div>
+            <div class="col-md-6">
+                <div id="map" class="map"></div>
+            </div>
         </div>
         <style>
             #map{
@@ -17,7 +20,7 @@
             function initMap(){
                 var MyLatLng = new google.maps.LatLng(35.465700, 139.622138); //経度と緯度を指定
                 var Options = {
-                    zoom:17,
+                    zoom:16,
                     center: MyLatLng,
                     mapTypeId: 'roadmap'
                 };
@@ -63,6 +66,5 @@
             }
             </script>
             <script defer src="http://maps.google.com/maps/api/js?key={{env('GOOGLE_MAP_API')}}&callback=initMap"></script>
-        <ul id="shop-list"></ul>
     </div>
     @endsection
