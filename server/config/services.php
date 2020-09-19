@@ -34,4 +34,8 @@ return [
         'apikey' => env('GOOGLE_MAP_API'),
     ],
 
+    'gurunavi' => [
+        'accesskey' => env('GURUNAVI_API')
+    ]
+
 ];

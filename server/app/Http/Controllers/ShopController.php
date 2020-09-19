@@ -22,6 +22,9 @@ class ShopController extends Controller
 
     public function list()
     {
+        $shops = [
+            ['name' => 'empty($shop['name']) ? '' : $shop['name']'];
+        ];
         return view('shops.list');
     }
 
