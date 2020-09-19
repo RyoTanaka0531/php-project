@@ -5,7 +5,7 @@
         <h1>カフェ</h1>
         <div id="map" class="map">
             <ul>
-                <li></li>
+                <li>{"name"}</li>
             </ul>
         </div>
         <style>
@@ -17,7 +17,7 @@
             function initMap(){
                 var MyLatLng = new google.maps.LatLng(35.465700, 139.622138); //経度と緯度を指定
                 var Options = {
-                    zoom:15,
+                    zoom:17,
                     center: MyLatLng,
                     mapTypeId: 'roadmap'
                 };
