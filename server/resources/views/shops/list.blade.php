@@ -35,7 +35,7 @@
                 $.ajax({
                 //type,url,dataTypeはリクエスト
                 type : "get",
-                url: "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid={{env('GURUNAVI_API')}}&latitude=35.465700&longitude=139.622138&range=3&category_l=RSFST18000&hit_per_page=100",
+                url: "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid={{config('services.gurunavi.accesskey')}}&latitude=35.465700&longitude=139.622138&range=3&category_l=RSFST18000&hit_per_page=100",
                 dataType : 'json',
                 //success,errorはレスポンス
                 success: function(json){
@@ -66,6 +66,6 @@
                 });
             }
             </script>
-            <script defer src="http://maps.google.com/maps/api/js?key={{env('GOOGLE_MAP_API')}}&callback=initMap"></script>
+            <script defer src="http://maps.google.com/maps/api/js?key={{config('services.google-map.apikey')}}&callback=initMap"></script>
     </div>
     @endsection
