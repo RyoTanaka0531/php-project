@@ -6,5 +6,33 @@ use Illuminate\Http\Request;
 
 class FieldController extends Controller
 {
-    pubric
+    public function index()
+    {
+        //
+    }
+
+    public function create()
+    {
+        //
+    }
+
+    public function show()
+    {
+        //
+    }
+
+    public function edit()
+    {
+        //
+    }
+
+    public function update()
+    {
+        //
+    }
+
+    public function delete()
+    {
+        //
+    }
 }
